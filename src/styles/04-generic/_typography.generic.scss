@@ -1,0 +1,41 @@
+@use '../03-mixins/common.mixins' as common;
+
+h1 {
+  font-size: 24px;
+
+  @include common.media(tablet) {
+    font-size: 32px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+
+  @include common.media(tablet) {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 18px;
+
+  @include common.media(tablet) {
+    font-size: 20px;
+  }
+}
+
+h4 {
+  font-size: 16px;
+
+  @include common.media(tablet) {
+    font-size: 18px;
+  }
+}
+
+h5 {
+  font-size: 14px;
+
+  @include common.media(tablet) {
+    font-size: 16px;
+  }
+}

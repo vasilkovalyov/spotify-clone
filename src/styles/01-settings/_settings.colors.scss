@@ -1,0 +1,38 @@
+:root {
+  --app-color-light: 255 255 255;
+  --app-color-dark: 0 0 0;
+
+  --app-color-subdued: 167 167 167;
+
+  --app-color-dark-base: 18 18 18; // #121212
+  --app-color-dark-highlight: 26 26 26; // #1a1a1a
+
+  --app-color-elevated-base: 36 36 36; // #242424
+  --app-color-elevated-highlight: 42 42 42; // #2a2a2a
+
+  --app-color-light-tinted-base: rgb(var(--app-color-light), 0.07);
+  --app-color-light-tinted-highlight: rgb(var(--app-color-light), 0.1);
+
+  --app-color-dark-tinted-base: rgb(var(--app-color-dark), 0.07);
+  --app-color-dark-tinted-highlight: rgb(var(--app-color-dark), 0.1);
+
+  --app-text-subdued: rgb(var(--app-color-subdued));
+  --app-base-bg: rgb(var(--app-color-dark-base));
+}
+
+// --text-base: #fff;
+// --text-subdued: #a7a7a7;
+// --text-bright-accent: #1ed760;
+// --text-negative: #fff;
+// --text-warning: #fff;
+// --text-positive: #fff;
+// --text-announcement: #fff;
+// --essential-base: #fff;
+// --essential-subdued: #727272;
+// --essential-bright-accent: #1ed760;
+// --essential-negative: #fff;
+// --essential-warning: #fff;
+// --essential-positive: #fff;
+// --essential-announcement: #fff;
+// --decorative-base: #fff;
+// --decorative-subdued: #292929;
