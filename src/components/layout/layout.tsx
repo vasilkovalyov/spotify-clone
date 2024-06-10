@@ -1,11 +1,20 @@
 import { Outlet } from 'react-router-dom';
+import cn from 'classnames';
+
+import { useAppSelector } from '@/redux/hooks';
 import { LeftSidebar } from '../containers';
 
 import './layout.scss';
 
 function Layout() {
+  const settingsSlice = useAppSelector((state) => state.settingsSlice);
+
   return (
-    <div className="app">
+    <div
+      className={cn('app', {
+        'app--left-sidebar-show': settingsSlice.isExpandedLeftSidebar,
+      })}
+    >
       <LeftSidebar />
       <main className="main">
         <Outlet />

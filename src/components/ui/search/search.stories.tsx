@@ -9,7 +9,7 @@ const meta = {
   },
   argTypes: {
     type: {
-      options: ['default', 'collapsed'],
+      options: ['default', 'expanded'],
       control: { type: 'select' },
     },
   },

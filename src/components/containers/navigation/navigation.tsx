@@ -1,18 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 
+import { useAppSelector } from '@/redux/hooks';
+
 import { Icon } from '@/components/ui';
 import { menu } from './navigation.model';
 
 import './navigation.scss';
 
 function Navigation() {
-  const isCollapsed = false;
+  const settingsSlice = useAppSelector((state) => state.settingsSlice);
 
   return (
     <nav
       className={cn('navigation', {
-        'navigation--collapsed': isCollapsed,
+        'navigation--expanded': settingsSlice.isExpandedLeftSidebar,
       })}
     >
       <ul className="navigation__list">

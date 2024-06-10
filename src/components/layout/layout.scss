@@ -1,5 +1,5 @@
 :root {
-  --app-left-sidebar-width: 360px;
+  --app-left-sidebar-width: 300px;
   // --app-left-sidebar-width: 72px;
   // --app-right-sidebar-width: 280px;
   --app-right-sidebar-width: 0;
@@ -9,17 +9,22 @@
 
 .app {
   display: grid;
+  overflow-x: hidden;
   gap: var(--app-panel-gap);
   padding: var(--app-panel-gap);
   grid-template-areas:
     'left-sidebar main-view right-sidebar'
     'player-bar player-bar player-bar';
-  grid-template-columns: minmax(auto, var(--app-left-sidebar-width)) 1fr minmax(
+  grid-template-columns: minmax(auto, var(--app-left-sidebar-width)) auto minmax(
       auto,
       var(--app-right-sidebar-width)
     );
   grid-template-rows: 1fr auto;
   height: 100vh;
+
+  &--left-sidebar-show {
+    --app-left-sidebar-width: 72px;
+  }
 }
 
 .left-sidebar {
@@ -28,6 +33,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--app-panel-gap);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
 }
 
 .main {

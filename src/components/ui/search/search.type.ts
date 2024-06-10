@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react';
 
 export type SearchProps = {
-  type?: 'collapsed';
+  type?: 'expanded';
 } & Partial<InputHTMLAttributes<HTMLInputElement>>;

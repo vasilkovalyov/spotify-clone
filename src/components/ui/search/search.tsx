@@ -8,19 +8,19 @@ import './search.scss';
 
 export default function Search({ onChange, type, ...props }: SearchProps) {
   const [value, setValue] = useState<string>('');
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const modificationCn = cn({
-    'search--collapsed': type === 'collapsed',
-    'search--collapsed-open': type === 'collapsed' && isCollapsed,
+    'search--expanded': type === 'expanded',
+    'search--expanded-open': type === 'expanded' && isExpanded,
   });
 
   return (
     <div className={cn('search', modificationCn)}>
-      {type === 'collapsed' ? (
+      {type === 'expanded' ? (
         <Button
-          className="search__collapsed-toggler"
+          className="search__expanded-toggler"
           icon={IconEnum.SEARCH}
-          onClick={() => setIsCollapsed(!isCollapsed)}
+          onClick={() => setIsExpanded(!isExpanded)}
         />
       ) : (
         <div className="search__icon">

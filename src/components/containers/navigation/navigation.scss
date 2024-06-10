@@ -1,7 +1,7 @@
 @use 'styles/03-mixins/_common.mixins' as common;
 
 .navigation {
-  &--collapsed &__link-text {
+  &--expanded &__link-text {
     display: none;
   }
 

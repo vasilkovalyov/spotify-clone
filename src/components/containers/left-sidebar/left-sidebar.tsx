@@ -9,7 +9,7 @@ function LeftSidebar() {
       <div className="panel">
         <Navigation />
       </div>
-      <div className="panel">
+      <div className="panel panel--second">
         <SidebarTools />
       </div>
     </aside>
