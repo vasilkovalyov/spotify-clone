@@ -10,6 +10,7 @@
 .app {
   display: grid;
   gap: var(--app-panel-gap);
+  padding: var(--app-panel-gap);
   grid-template-areas:
     'left-sidebar main-view right-sidebar'
     'player-bar player-bar player-bar';

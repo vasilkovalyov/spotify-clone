@@ -1,11 +1,16 @@
 import { Outlet } from 'react-router-dom';
+import { Navigation } from '../containers';
 
 import './layout.scss';
 
 function Layout() {
   return (
     <div className="app">
-      <aside className="left-sidebar"></aside>
+      <aside className="left-sidebar">
+        <div className="panel">
+          <Navigation />
+        </div>
+      </aside>
       <main className="main">
         <Outlet />
       </main>
