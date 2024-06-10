@@ -8,7 +8,7 @@ const meta = {
   title: 'UI/Icon',
   component: Icon,
   parameters: {
-    layout: 'padded',
+    layout: 'centered',
   },
 
   argTypes: {

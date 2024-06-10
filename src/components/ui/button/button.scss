@@ -1,0 +1,26 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-weight: 700;
+  color: var(--app-text-subdued);
+  transition: color var(--app-transition-speed);
+
+  &--content-reversed {
+    flex-direction: row-reverse;
+  }
+
+  &__icon {
+    &:only-child {
+      margin-right: -8px;
+    }
+  }
+
+  &:hover {
+    color: var(--app-text-base);
+  }
+}
