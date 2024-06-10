@@ -15,12 +15,6 @@
     flex-direction: row-reverse;
   }
 
-  &__icon {
-    &:only-child {
-      margin-right: -8px;
-    }
-  }
-
   &:hover {
     color: rgb(var(--app-color-light));
   }
