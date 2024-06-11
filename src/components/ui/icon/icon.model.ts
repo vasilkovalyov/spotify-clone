@@ -26,4 +26,6 @@ export const model = [
   'instagram',
   'twitter',
   'facebook',
+  'chevron-left',
+  'chevron-right',
 ];

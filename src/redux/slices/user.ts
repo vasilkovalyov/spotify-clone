@@ -1,6 +1,7 @@
+import { LocalStorageService, SpotifyService } from '@/services';
 import { StatusLoadingBuilder } from '@/types/common';
 import { UserType } from '@/types/user';
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const defaultUserState: UserType = {
   display_name: '',
@@ -33,6 +34,18 @@ export type UserAuthStateType = {
   error?: string | null;
 };
 
+export const getMe = createAsyncThunk(
+  'auth/me',
+  async ({ accessToken }: { accessToken?: string }) => {
+    if (!LocalStorageService.getAccessToken()) {
+      return null;
+    }
+
+    const response = await SpotifyService.getMe(accessToken);
+    return response.data;
+  }
+);
+
 const initialState: UserAuthStateType = {
   user: defaultUserState,
   isAuth: false,
@@ -45,7 +58,23 @@ export const userAuthSlice = createSlice({
   name: 'userAuthSlice',
   initialState,
   reducers: {},
-  extraReducers: () => {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getMe.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(getMe.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        if (action.payload !== null) {
+          state.user = action.payload;
+          state.isAuth = true;
+        }
+      })
+      .addCase(getMe.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
 });
 
 export default userAuthSlice.reducer;

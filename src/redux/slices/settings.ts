@@ -1,4 +1,5 @@
 import { LocalStorageEnum } from '@/constants/local-storage';
+import { LocalStorageService } from '@/services';
 import { StatusLoadingBuilder } from '@/types/common';
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -22,15 +23,12 @@ export const settingsSlice = createSlice({
   reducers: {
     toggleExpandedLeftSidebar: (state, action) => {
       state.isExpandedLeftSidebar = action.payload;
-      localStorage.setItem(
-        LocalStorageEnum.EXPANDED_LEFT_SIDEBAR,
-        action.payload
-      );
+      LocalStorageService.setExpandedLeftSidebar(action.payload);
     },
     fetchSettings: (state) => {
-      const expandedLeftSidebarLS = localStorage.getItem(
-        LocalStorageEnum.EXPANDED_LEFT_SIDEBAR
-      );
+      const expandedLeftSidebarLS =
+        LocalStorageService.getExpandedLeftSidebar();
+
       if (expandedLeftSidebarLS === 'true') {
         state.isExpandedLeftSidebar = true;
       } else {

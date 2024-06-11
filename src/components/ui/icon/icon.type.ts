@@ -25,4 +25,6 @@ export enum IconEnum {
   INSTAGRAM = 'instagram',
   TWITTER = 'twitter',
   FACEBOOK = 'facebook',
+  CHEVRON_LEFT = 'chevron-left',
+  CHEVRON_RIGHT = 'chevron-right',
 }

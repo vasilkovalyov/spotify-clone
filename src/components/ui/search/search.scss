@@ -20,6 +20,8 @@
   }
 
   &__icon {
+    @include common.animate(color);
+
     position: absolute;
     inset: 0 auto 0 0;
     z-index: 1;
@@ -28,7 +30,6 @@
     align-items: center;
     justify-content: center;
     width: var(--app-search-icon-size);
-    transition: color var(--app-transition-speed);
   }
 
   &__clear {

@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import cn from 'classnames';
 
 import { useAppSelector } from '@/redux/hooks';
-import { LeftSidebar } from '../containers';
+import { Header, LeftSidebar } from '../containers';
 
 import './layout.scss';
 
@@ -17,7 +17,10 @@ function Layout() {
     >
       <LeftSidebar />
       <main className="main">
-        <Outlet />
+        <div className="panel">
+          <Header />
+          <Outlet />
+        </div>
       </main>
       <aside className="right-sidebar"></aside>
       <section className="player-bar"></section>

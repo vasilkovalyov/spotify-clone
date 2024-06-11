@@ -41,6 +41,12 @@
   grid-area: main-view;
   border-radius: 8px;
   overflow: hidden;
+  display: grid;
+  overflow-y: auto;
+
+  > .panel {
+    padding: 0;
+  }
 }
 
 .right-sidebar {

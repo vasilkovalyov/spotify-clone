@@ -1,4 +1,8 @@
+@use 'styles/03-mixins/_common.mixins' as common;
+
 .btn {
+  @include common.animate(color background-color);
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -7,9 +11,7 @@
   cursor: pointer;
   padding: 4px 8px;
   font-weight: 700;
-
   color: var(--app-text-subdued);
-  transition: color var(--app-transition-speed);
 
   &--content-reversed {
     flex-direction: row-reverse;
