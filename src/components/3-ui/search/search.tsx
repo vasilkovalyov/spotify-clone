@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import cn from 'classnames';
-import { Button, Icon, IconEnum } from '@/components/ui';
+import { Button, Icon, IconEnum } from '@/components/3-ui';
 
 import { SearchProps } from './search.type';
 

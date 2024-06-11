@@ -7,7 +7,7 @@
 
   &__container {
     display: flex;
-    padding-inline: 8px;
+    padding-inline: var(--app-main-container-side-space);
     gap: 8px;
     width: 100%;
   }

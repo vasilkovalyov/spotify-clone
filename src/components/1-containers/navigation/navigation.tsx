@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { useAppSelector } from '@/redux/hooks';
 
-import { Icon } from '@/components/ui';
+import { Icon } from '@/components/3-ui';
 import { menu } from './navigation.model';
 
 import './navigation.scss';

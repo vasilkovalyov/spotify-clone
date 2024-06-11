@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import cn from 'classnames';
 
 import { useAppSelector } from '@/redux/hooks';
-import { Header, LeftSidebar } from '../containers';
+import { Header, LeftSidebar } from '../1-containers';
 
 import './layout.scss';
 

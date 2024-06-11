@@ -1,20 +1,11 @@
-import { Outlet } from 'react-router-dom';
-import cn from 'classnames';
-
 import { AuthService } from '@/services';
 import { useAppSelector } from '@/redux/hooks';
-import { Button, IconEnum } from '@/components/ui';
+import { Button, IconEnum } from '@/components/3-ui';
 
 import './header.scss';
-import { useEffect } from 'react';
 
 function Header() {
   const userAuthSlice = useAppSelector((state) => state.userAuthSlice);
-  const settingsSlice = useAppSelector((state) => state.settingsSlice);
-
-  useEffect(() => {
-    console.log('userAuthSlice', userAuthSlice);
-  }, [userAuthSlice.user]);
 
   return (
     <header className="header">

@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { toggleExpandedLeftSidebar } from '@/redux/slices';
 
-import { Button, Icon, IconEnum } from '@/components/ui';
+import { Button, Icon, IconEnum } from '@/components/3-ui';
 
 import './sidebar-tools.scss';
 

@@ -1,4 +1,4 @@
-import { IconEnum } from '@/components/ui';
+import { IconEnum } from '@/components/3-ui';
 import { NavigationLinkProps } from './navigation.type';
 import { Pages } from '@/constants/pages';
 
