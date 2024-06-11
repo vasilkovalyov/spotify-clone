@@ -24,7 +24,9 @@ export class AuthService {
     const params = new URLSearchParams({
       client_id: import.meta.env.VITE_REACT_API_CLIENT_ID,
       response_type: 'code',
-      redirect_uri: import.meta.env.VITE_REACT_API_REDIRECT_URL,
+      redirect_uri:
+        import.meta.env.VITE_REACT_API_REDIRECT_URL ||
+        'http://192.168.1.5:5173',
       show_dialog: 'true',
       scope: this.getScopes(),
     });
@@ -41,7 +43,9 @@ export class AuthService {
       grant_type: 'authorization_code',
       code: token,
       response_type: 'code',
-      redirect_uri: import.meta.env.VITE_REACT_API_REDIRECT_URL,
+      redirect_uri:
+        import.meta.env.VITE_REACT_API_REDIRECT_URL ||
+        'http://192.168.1.5:5173',
       client_id: import.meta.env.VITE_REACT_API_CLIENT_ID,
       client_secret: import.meta.env.VITE_REACT_API_CLIENT_SECRET,
     });

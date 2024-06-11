@@ -1,3 +1,9 @@
+import { BlockCategories } from '@/blocks';
+
 export default function SearchPage() {
-  return <div>Search page</div>;
+  return (
+    <div className="search-page">
+      <BlockCategories />
+    </div>
+  );
 }

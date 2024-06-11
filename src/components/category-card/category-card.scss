@@ -1,0 +1,53 @@
+@use 'styles/03-mixins/_common.mixins' as common;
+
+.category-card {
+  $transform: rotate(25deg) translate(18%, -2%);
+
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  color: rgb(var(--app-color-light));
+
+  &:hover &__image {
+    transform: $transform scale(1.1);
+  }
+
+  &__image {
+    @include common.animate(transform);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45%;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transform: $transform;
+  }
+
+  &__name {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    hyphens: auto;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    font-size: clamp(16px, 2vw, 24px);
+    padding-inline-end: 34%;
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  &--skeleton {
+    background-color: rgb(var(--app-color-light) / 0.3);
+  }
+
+  &--skeleton &__name {
+    width: 80%;
+    height: 22px;
+  }
+}

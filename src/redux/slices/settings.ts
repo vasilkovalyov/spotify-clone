@@ -1,4 +1,3 @@
-import { LocalStorageEnum } from '@/constants/local-storage';
 import { LocalStorageService } from '@/services';
 import { StatusLoadingBuilder } from '@/types/common';
 import { createSlice } from '@reduxjs/toolkit';
