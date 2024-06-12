@@ -32,6 +32,7 @@ function LoadMoreProvider({
     return () => {
       if (observer) observer.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   return (

@@ -35,6 +35,7 @@ function BlockRelateArtists({ artistId }: BlockRelateArtistsProps) {
 
   useEffect(() => {
     loadArtists();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
