@@ -4,10 +4,11 @@ import { BlockHeadProps } from './block-head.type';
 
 import './block.head.scss';
 
-function BlockHead({ title, link }: BlockHeadProps) {
+function BlockHead({ title, link, isTitleLarge = false }: BlockHeadProps) {
+  const TitleTag = isTitleLarge ? 'h1' : 'h2';
   return (
     <div className="block-head">
-      <h2 className="text-light">{title}</h2>
+      <TitleTag className="text-light">{title}</TitleTag>
       {link && (
         <Link className="block-head__link" to={link.path}>
           {link.name}

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { HomePage, SearchPage, PageArtist } from '@/pages';
+import { HomePage, SearchPage, PageArtist, PageArtistsRelate } from '@/pages';
 
 import { Pages } from '@/constants/pages';
 import { Layout } from '@/components';
@@ -33,6 +33,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <PageArtist />,
+      },
+      {
+        path: 'related',
+        element: <PageArtistsRelate />,
       },
     ],
   },
