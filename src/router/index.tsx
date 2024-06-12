@@ -1,6 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { HomePage, SearchPage, PageArtist, PageArtistsRelate } from '@/pages';
+import {
+  HomePage,
+  SearchPage,
+  PageArtist,
+  PageArtistsRelate,
+  PageRecentlyPlayed,
+} from '@/pages';
 
 import { Pages } from '@/constants/pages';
 import { Layout } from '@/components';
@@ -37,6 +43,16 @@ const router = createBrowserRouter([
       {
         path: 'related',
         element: <PageArtistsRelate />,
+      },
+    ],
+  },
+  {
+    path: Pages.RECENTLY_PLAYED,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <PageRecentlyPlayed />,
       },
     ],
   },

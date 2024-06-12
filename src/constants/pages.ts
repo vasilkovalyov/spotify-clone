@@ -3,4 +3,5 @@ export enum Pages {
   SEARCH = '/search',
   GENRE = '/genre',
   ARTIST = '/artist',
+  RECENTLY_PLAYED = '/genre/recently-played',
 }

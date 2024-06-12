@@ -1,3 +1,9 @@
+import { BlockRecentlyPlayed } from '@/blocks';
+
 export default function HomePage() {
-  return <div>Home page</div>;
+  return (
+    <div>
+      <BlockRecentlyPlayed isLimited={false} />
+    </div>
+  );
 }

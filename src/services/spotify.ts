@@ -3,6 +3,7 @@ import { AxiosPromise } from 'axios';
 import { UserType } from '@/types/user';
 import { CategoriesType } from '@/types/categories';
 import { RelateArtistType } from '@/types/relate-artist';
+import { RecentlyTrackType } from '@/types/track';
 
 export class SpotifyService {
   public static async getMe(
@@ -59,5 +60,24 @@ export class SpotifyService {
     }
 
     return response.data.artists;
+  }
+
+  public static async getRecentlyPlayed(
+    limit?: number,
+    after?: number
+  ): Promise<RecentlyTrackType[]> {
+    const params = {
+      limit: limit,
+      after: after,
+    };
+
+    const response = await $api.get<{ items: RecentlyTrackType[] }>(
+      'me/player/recently-played',
+      {
+        params: params,
+      }
+    );
+
+    return response.data.items;
   }
 }
