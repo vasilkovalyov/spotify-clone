@@ -2,6 +2,7 @@ import $api from '@/api/axios';
 import { AxiosPromise } from 'axios';
 import { UserType } from '@/types/user';
 import { CategoriesType } from '@/types/categories';
+import { RelateArtistType } from '@/types/relate-artist';
 
 export class SpotifyService {
   public static async getMe(
@@ -13,6 +14,7 @@ export class SpotifyService {
           Authorization: `Bearer ${accessToken}`,
         },
       });
+
       return response;
     }
 
@@ -42,5 +44,20 @@ export class SpotifyService {
     });
 
     return response;
+  }
+
+  public static async getRelateArtists(
+    artistId: string,
+    limit?: number
+  ): Promise<RelateArtistType[]> {
+    const response = await $api.get<{ artists: RelateArtistType[] }>(
+      `artists/${artistId}/related-artists`
+    );
+
+    if (limit) {
+      return response.data.artists.slice(0, limit);
+    }
+
+    return response.data.artists;
   }
 }

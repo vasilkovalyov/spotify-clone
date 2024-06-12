@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { HomePage, SearchPage } from '@/pages';
+import { HomePage, SearchPage, PageArtist } from '@/pages';
 
 import { Pages } from '@/constants/pages';
 import { Layout } from '@/components';
@@ -23,6 +23,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <SearchPage />,
+      },
+    ],
+  },
+  {
+    path: `${Pages.ARTIST}/:id`,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <PageArtist />,
       },
     ],
   },

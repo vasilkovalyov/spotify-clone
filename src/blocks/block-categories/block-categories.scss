@@ -1,17 +1,13 @@
 @use 'styles/03-mixins/common.mixins' as common;
 
 .block-categories {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   &__container {
     display: grid;
-    row-gap: 20px;
+    row-gap: 10px;
     padding-inline: var(--app-main-container-side-space);
-  }
-
-  h2 {
-    color: rgb(var(--app-color-light));
   }
 }
 

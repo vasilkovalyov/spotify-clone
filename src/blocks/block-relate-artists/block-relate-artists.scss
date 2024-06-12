@@ -1,0 +1,7 @@
+.block-relate-artists {
+  &__container {
+    display: grid;
+    row-gap: 10px;
+    padding-inline: var(--app-main-container-side-space);
+  }
+}

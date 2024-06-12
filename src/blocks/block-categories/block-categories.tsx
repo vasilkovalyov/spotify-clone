@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { CategoryType } from '@/types/categories';
+import { Pages } from '@/constants/pages';
 import { SpotifyService } from '@/services';
-
-import { CategoryCard, CategoryCardSkeleton } from '@/components/category-card';
-
+import { CategoryType } from '@/types/categories';
 import { StatusLoadingBuilder } from '@/types/common';
+import { splitText } from '@/utils/common';
+import { BlockHead, ListSkeletons, LoadMoreProvider } from '@/components';
+import { CategoryCard, CategoryCardSkeleton } from '@/components';
 
 import { colors } from './block-categories.model';
 
 import './block-categories.scss';
-import { Pages } from '@/constants/pages';
-import { splitText } from '@/utils/common';
-import { LoadMoreProvider } from '@/components';
 
 function BlockCategories() {
   const [statusLoading, setStatusLoading] =
@@ -68,7 +66,7 @@ function BlockCategories() {
   return (
     <section className="block-categories">
       <div className="block-categories__container">
-        <h2>Browse all</h2>
+        <BlockHead title="Browse all" />
         <LoadMoreProvider
           callback={() => {
             loadMore();
@@ -77,11 +75,9 @@ function BlockCategories() {
           deps={[categories]}
         >
           {statusLoading === 'loading' && (
-            <div className="categories-grid">
-              {Array.from(Array(12).keys()).map((item) => (
-                <CategoryCardSkeleton key={item} />
-              ))}
-            </div>
+            <ListSkeletons count={12} className="categories-grid">
+              <CategoryCardSkeleton />
+            </ListSkeletons>
           )}
           {statusLoading === 'succeeded' && (
             <div className="categories-grid">
