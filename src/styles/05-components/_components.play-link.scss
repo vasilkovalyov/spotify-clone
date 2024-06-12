@@ -1,0 +1,21 @@
+@use 'styles/03-mixins/_common.mixins' as common;
+
+.btn.play-link {
+  @include common.animate(opacity transform);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  color: rgb(var(--app-color-dark));
+  background-color: var(--app-color-accent);
+  box-shadow: 0 8px 8px rgb(var(--app-color-dark) / 0.5);
+
+  &:hover {
+    transform: scale(1.04);
+    color: rgb(var(--app-color-dark));
+  }
+}

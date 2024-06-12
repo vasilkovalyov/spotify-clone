@@ -27,4 +27,5 @@ export enum IconEnum {
   FACEBOOK = 'facebook',
   CHEVRON_LEFT = 'chevron-left',
   CHEVRON_RIGHT = 'chevron-right',
+  PLAY = 'play',
 }

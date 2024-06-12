@@ -17,6 +17,11 @@
     flex-direction: row-reverse;
   }
 
+  &__text {
+    display: flex;
+    align-items: center;
+  }
+
   &:hover {
     color: rgb(var(--app-color-light));
   }

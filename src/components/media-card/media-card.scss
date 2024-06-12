@@ -1,0 +1,84 @@
+@use 'styles/03-mixins/_common.mixins' as common;
+
+:root {
+  --app-play-link-transform-position: 8px;
+  --app-play-link-opacity: 0;
+  --app-bg-color: transparent;
+}
+
+.media-card {
+  @include common.animate(background-color);
+
+  position: relative;
+  display: grid;
+  row-gap: 4px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--app-bg-color);
+
+  &:hover {
+    --app-play-link-transform-position: 0;
+    --app-play-link-opacity: 1;
+    --app-bg-color: rgb(var(--app-color-dark-highlight));
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    position: relative;
+    box-shadow: 0 8px 24px rgb(var(--app-color-dark) / 0.5);
+    padding-bottom: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__play-link {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 1;
+    transform: translateY(var(--app-play-link-transform-position));
+    opacity: var(--app-play-link-opacity);
+  }
+
+  &__body {
+    display: grid;
+    row-gap: 4px;
+  }
+
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 400;
+    color: rgb(var(--app-color-light));
+  }
+
+  &__type {
+    font-size: var(--app-text-size-sm);
+    text-transform: capitalize;
+  }
+
+  &--skeleton {
+    --app-bg-color: rgb(var(--app-color-dark-highlight));
+  }
+
+  &--skeleton &__name,
+  &--skeleton &__type {
+    width: 100%;
+    height: 22px;
+  }
+}
