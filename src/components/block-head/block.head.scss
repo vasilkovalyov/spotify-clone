@@ -1,0 +1,18 @@
+.block-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+
+  &__link {
+    color: rgb(var(--app-color-grey));
+    white-space: nowrap;
+    font-size: var(--app-text-size-sm);
+    font-weight: 700;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
