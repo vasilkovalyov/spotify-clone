@@ -21,10 +21,10 @@ function getUniqArtistTracks(
   tracks: RecentlyTrackType[],
   limit?: number
 ): RecentlyTrackType[] {
-  let artistsObj: { [key: string]: RecentlyTrackType } = {};
+  const artistsObj: { [key: string]: RecentlyTrackType } = {};
   const array: RecentlyTrackType[] = [];
 
-  for (let item of tracks) {
+  for (const item of tracks) {
     if (!artistsObj[item.track.album.name]) {
       artistsObj[item.track.album.name] = item;
       if (limit && array.length === limit) break;
