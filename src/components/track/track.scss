@@ -1,0 +1,132 @@
+:root {
+  --app-track-bg-color: transparent;
+  --app-track-name-color: rgb(var(--app-color-light));
+  --app-track-artist-color: rgb(var(--app-color-grey));
+  --app-track-play-btn-opacity: 0;
+  --app-track-play-btn-icon-opacity: 0;
+  --app-track-tool-btn-opacity: 0;
+}
+
+.track {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 12px;
+  grid-template-columns: 40px 1fr 120px;
+  background-color: var(--app-track-bg-color);
+  padding: 8px 16px 8px 8px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &:hover {
+    --app-track-bg-color: rgb(var(--app-color-light) / 0.1);
+    --app-track-artist-color: rgb(var(--app-color-light));
+    --app-track-play-btn-opacity: 1;
+    --app-track-play-btn-icon-opacity: 1;
+    --app-track-tool-btn-opacity: 1;
+  }
+
+  &--playing {
+    --app-track-name-color: var(--app-color-accent);
+  }
+
+  &--selected {
+    --app-track-bg-color: rgb(var(--app-color-light) / 0.3);
+    --app-track-artist-color: rgb(var(--app-color-light));
+    --app-track-play-btn-opacity: 1;
+    --app-track-play-btn-icon-opacity: 1;
+    --app-track-tool-btn-opacity: 1;
+
+    &:hover {
+      --app-track-bg-color: rgb(var(--app-color-light) / 0.3);
+    }
+  }
+
+  &--skeleton {
+    --app-track-bg-color: rgb(var(--app-color-dark-highlight));
+  }
+
+  &--skeleton &__name,
+  &--skeleton &__artist {
+    width: 100%;
+    height: 22px;
+    max-width: 100%;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__play-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--app-color-light));
+    opacity: var(--app-track-play-btn-opacity);
+    background-color: rgb(var(--app-color-dark) / 0.7);
+
+    svg {
+      opacity: var(--app-track-play-btn-icon-opacity);
+    }
+  }
+
+  &__body {
+    display: grid;
+    row-gap: 4px;
+  }
+
+  &__name {
+    color: var(--app-track-name-color);
+    font-weight: 400;
+    max-width: max-content;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__artist {
+    max-width: max-content;
+    font-size: var(--app-text-size-sm);
+    color: var(--app-track-artist-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__duration {
+    text-align: center;
+  }
+
+  &__tools {
+    display: grid;
+    justify-content: space-between;
+    column-gap: 12px;
+    grid-template-columns: 16px 46px 16px;
+  }
+
+  &__add {
+    opacity: var(--app-track-tool-btn-opacity);
+  }
+
+  &__more {
+    opacity: var(--app-track-tool-btn-opacity);
+  }
+
+  .btn {
+    padding: 0;
+  }
+}
