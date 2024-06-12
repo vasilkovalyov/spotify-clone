@@ -13,7 +13,8 @@ export const model: TrackProps = {
   artistName: 'Metallica',
   albumId: '1aGapZGHBovnmhwqVNI6JZ',
   albumName: "Kill 'Em All (Remastered)",
-  isPlaying: false,
+  playing: false,
+  selected: false,
   href: '#',
   hrefArtist: '#',
 };

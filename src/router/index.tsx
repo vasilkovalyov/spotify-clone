@@ -6,6 +6,7 @@ import {
   PageArtist,
   PageArtistsRelate,
   PageRecentlyPlayed,
+  SearchSinglePage,
 } from '@/pages';
 
 import { Pages } from '@/constants/pages';
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <SearchPage />,
+      },
+      {
+        path: ':value',
+        element: <SearchSinglePage />,
       },
     ],
   },

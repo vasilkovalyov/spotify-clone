@@ -5,3 +5,5 @@ export * from './media-card';
 export * from './list-skeletons';
 export * from './block-head';
 export * from './track';
+export * from './track-list';
+export * from './search-result-artist';

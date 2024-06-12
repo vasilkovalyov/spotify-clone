@@ -4,6 +4,8 @@ import { UserType } from '@/types/user';
 import { CategoriesType } from '@/types/categories';
 import { RelateArtistType } from '@/types/relate-artist';
 import { RecentlyTrackType } from '@/types/track';
+import { SearchType } from '@/types/search';
+import { ArtistType } from '@/types/artist';
 
 export class SpotifyService {
   public static async getMe(
@@ -79,5 +81,37 @@ export class SpotifyService {
     );
 
     return response.data.items;
+  }
+
+  public static async getDataSearch(
+    value: string,
+    options?: {
+      type: string[];
+    }
+  ): Promise<AxiosPromise<SearchType>> {
+    const params = new URLSearchParams({
+      q: `remaster&artist:${value}`,
+      include_external: 'audio',
+      limit: '10',
+    });
+
+    if (options && options.type) {
+      const typeArray = options?.type;
+      params.append('type', typeArray?.join(','));
+    }
+
+    const response = await $api.get('search', {
+      params: params,
+    });
+
+    return response;
+  }
+
+  public static async getAtristById(
+    id: string
+  ): Promise<AxiosPromise<ArtistType>> {
+    const response = await $api.get(`artists/${id}`);
+
+    return response;
   }
 }

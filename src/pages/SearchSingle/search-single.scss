@@ -1,0 +1,38 @@
+@use 'styles/03-mixins/common.mixins' as common;
+
+.search-single-page {
+  display: grid;
+  row-gap: 20px;
+
+  &__blocks {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__container {
+    display: grid;
+    row-gap: 20px;
+    padding-inline: var(--app-main-container-side-space);
+  }
+
+  &__grid {
+    display: grid;
+    column-gap: 16px;
+    row-gap: 20px;
+
+    @include common.media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include common.media(tablet_lg) {
+      grid-template-columns: minmax(240px, 35%) 1fr;
+    }
+  }
+
+  &__col {
+    display: grid;
+    align-items: start;
+    row-gap: 20px;
+    grid-template-rows: auto 1fr;
+  }
+}

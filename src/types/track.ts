@@ -1,37 +1,9 @@
-import { ImageType } from './image';
-
-export type TrackArtist = {
-  external_urls: {
-    spotify: string;
-  };
-  href: string;
-  id: string;
-  name: string;
-  type: string;
-  uri: string;
-};
-
-export type TrackAlbum = {
-  artists: TrackArtist[];
-  images: ImageType[];
-  external_urls: {
-    spotify: string;
-  };
-  album_type: string;
-  available_markets: string[];
-  href: string;
-  id: string;
-  name: string;
-  release_date: string;
-  release_date_precision: string;
-  total_tracks: number;
-  type: string;
-  uri: string;
-};
+import { AlbumType } from './album';
+import { ArtistType } from './artist';
 
 export type TrackType = {
-  album: TrackAlbum;
-  artists: TrackArtist[];
+  album: AlbumType;
+  artists: ArtistType[];
   external_ids: {
     isrc: string;
   };

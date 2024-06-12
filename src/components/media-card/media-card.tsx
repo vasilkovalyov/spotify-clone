@@ -23,10 +23,11 @@ function MediaCard({ href, image, name, type }: MediaCardProps) {
         </Button>
       </div>
       <div className="media-card__body">
-        <h5 className="media-card__name">{name}</h5>
+        <h5 className="media-card__name clamp-one-line">{name}</h5>
         <p className="media-card__type">{type}</p>
       </div>
-      <Link to={href} className="media-card__link" />
+
+      {href && <Link to={href} className="media-card__link" />}
     </div>
   );
 }

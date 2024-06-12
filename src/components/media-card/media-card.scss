@@ -80,11 +80,6 @@
   }
 
   &__name {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-weight: 400;
     color: rgb(var(--app-color-light));
   }
 
