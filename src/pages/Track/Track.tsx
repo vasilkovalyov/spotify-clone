@@ -7,49 +7,29 @@ import {
   BlockArtistPopularTracks,
   BlockRelateArtists,
 } from '@/blocks';
-import { StatusLoadingBuilder } from '@/types/common';
 import { TrackType } from '@/types/track';
 import { ArtistType } from '@/types/artist';
 import { SpotifyService } from '@/services';
 import { getDescriptionListForBanner } from './Track.utils';
 import { BlockArtistAlbumSimple } from '@/blocks/block-artist-album-simple';
-import { Pages } from '@/constants/pages';
-import { AlbumPanel } from '@/components';
 
 function PageTrack() {
   const { id } = useParams();
 
-  const [statusLoading, setStatusLoading] =
-    useState<StatusLoadingBuilder>('loading');
   const [track, setTrack] = useState<TrackType | null>(null);
   const [artist, setArtist] = useState<ArtistType | null>(null);
-  const [recomendationTracks, setRecomendationTracks] = useState<TrackType[]>(
-    []
-  );
 
   async function loadData() {
     try {
-      setStatusLoading('loading');
       const trackResponse = await SpotifyService.getTrackById(id as string);
       const artistResponse = await SpotifyService.getAtristById(
         trackResponse.data.artists[0].id
       );
-      // const recomendationTracksResponse =
-      //   await SpotifyService.getTrackRecomendation(
-      //     trackResponse.data.id,
-      //     artistResponse.data.id,
-      //     {
-      //       limit: 10,
-      //     }
-      //   );
 
       setTrack(trackResponse.data);
       setArtist(artistResponse.data);
-      // setRecomendationTracks(recomendationTracksResponse.data.tracks);
     } catch (e) {
-      setStatusLoading('failed');
-    } finally {
-      setStatusLoading('succeeded');
+      console.log(e);
     }
   }
 

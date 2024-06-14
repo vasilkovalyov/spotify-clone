@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { StatusLoadingBuilder } from '@/types/common';
 
 import { SpotifyService } from '@/services';
 import { ArtistType } from '@/types/artist';
@@ -9,19 +8,14 @@ import { BlockBannerArtistProps } from './block-banner-artist.type';
 import './block-banner-artist.scss';
 
 function BlockBannerArtist({ artistId }: BlockBannerArtistProps) {
-  const [statusLoading, setStatusLoading] =
-    useState<StatusLoadingBuilder>('loading');
   const [data, setData] = useState<ArtistType | null>(null);
 
   async function loadData() {
     try {
-      setStatusLoading('loading');
       const response = await SpotifyService.getAtristById(artistId);
       setData(response.data);
     } catch (e) {
-      setStatusLoading('failed');
-    } finally {
-      setStatusLoading('succeeded');
+      console.log(e);
     }
   }
 

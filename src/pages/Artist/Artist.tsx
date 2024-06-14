@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { BlockRelateArtists } from '@/blocks';
-import { SpotifyService } from '@/services';
-import { StatusLoadingBuilder } from '@/types/common';
 import { BlockBannerArtist } from '@/blocks/block-banner-artist';
 
 function PageArtist() {

@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import { convertTrackTime } from '@/utils/common';
 
-import { Button, Icon, IconEnum } from '../3-ui';
+import { Button, IconEnum } from '../3-ui';
 import { TrackProps } from './track.type';
 
 import './track.scss';
