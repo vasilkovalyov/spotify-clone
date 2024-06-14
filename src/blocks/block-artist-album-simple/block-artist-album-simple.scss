@@ -1,0 +1,9 @@
+.block-artist-album-simple {
+  padding-block: 20px;
+
+  &__container {
+    display: grid;
+    row-gap: 20px;
+    padding-inline: var(--app-main-container-side-space);
+  }
+}

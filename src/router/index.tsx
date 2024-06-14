@@ -7,6 +7,7 @@ import {
   PageArtistsRelate,
   PageRecentlyPlayed,
   SearchSinglePage,
+  PageTrack,
 } from '@/pages';
 
 import { Pages } from '@/constants/pages';
@@ -58,6 +59,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <PageRecentlyPlayed />,
+      },
+    ],
+  },
+  {
+    path: `${Pages.TRACK}/:id`,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <PageTrack />,
       },
     ],
   },

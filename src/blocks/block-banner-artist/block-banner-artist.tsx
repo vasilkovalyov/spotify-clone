@@ -45,7 +45,7 @@ function BlockBannerArtist({ artistId }: BlockBannerArtistProps) {
           <ul className="block-banner-artist__tags text-light">
             {data?.genres.length &&
               data?.genres.map((genge, index, arr) => (
-                <li key={genge}>
+                <li key={`${genge}-${index}`}>
                   {genge}
                   {index < arr.length - 1 ? ',' : null}
                 </li>

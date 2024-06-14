@@ -94,7 +94,7 @@ function BlockRelateArtists({ isLimited = false }: BlockRecentlyPlayedProps) {
                   image={track.album.images[1]}
                   name={track.album.name}
                   type={track.type}
-                  href="/"
+                  href={`${Pages.TRACK}/${track.id}`}
                 />
               ))}
           </div>

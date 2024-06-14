@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import BlockBannerArtist from './block-banner-artist';
 
 const meta = {
-  title: 'Components/BlockBannerArtist',
+  title: 'Blocks/BlockBannerArtist',
   component: BlockBannerArtist,
   parameters: {
     layout: 'padded',

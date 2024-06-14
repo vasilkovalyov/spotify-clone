@@ -14,9 +14,9 @@ function TrackList({
           <TrackSkeleton />
         </ListSkeletons>
       )}
-      {statusLoading === 'succeeded' &&
-        items.length &&
-        items.map((item) => <Track key={item.id} {...item} />)}
+      {statusLoading === 'succeeded' && items.length
+        ? items.map((item) => <Track key={item.id} {...item} />)
+        : null}
     </div>
   );
 }

@@ -3,9 +3,10 @@ import { AxiosPromise } from 'axios';
 import { UserType } from '@/types/user';
 import { CategoriesType } from '@/types/categories';
 import { RelateArtistType } from '@/types/relate-artist';
-import { RecentlyTrackType } from '@/types/track';
+import { RecentlyTrackType, TrackType } from '@/types/track';
 import { SearchType } from '@/types/search';
 import { ArtistType } from '@/types/artist';
+import { RecomendationOptionsType } from '@/types/response';
 
 export class SpotifyService {
   public static async getMe(
@@ -111,6 +112,68 @@ export class SpotifyService {
     id: string
   ): Promise<AxiosPromise<ArtistType>> {
     const response = await $api.get(`artists/${id}`);
+
+    return response;
+  }
+
+  public static async getTrackById(
+    id: string
+  ): Promise<AxiosPromise<TrackType>> {
+    const response = await $api.get(`tracks/${id}`);
+
+    return response;
+  }
+
+  public static async getTrackRecomendation(
+    trackId: string,
+    artistId: string,
+    options?: RecomendationOptionsType
+  ): Promise<AxiosPromise<{ tracks: TrackType[] }>> {
+    const response = await $api.get(`recommendations`, {
+      params: {
+        seed_artists: artistId,
+        seed_tracks: trackId,
+        ...options,
+      },
+    });
+
+    return response;
+  }
+
+  public static async getArtistPopularTracks(
+    id: string,
+    limit?: number
+  ): Promise<AxiosPromise<{ tracks: TrackType[] }>> {
+    const response = await $api.get(`artists/${id}/top-tracks`, {
+      params: {
+        id: id,
+        limit: limit,
+      },
+    });
+
+    return response;
+  }
+
+  public static async getAlbumTracksById(
+    id: string,
+    limit: number = 20
+  ): Promise<AxiosPromise<{ items: TrackType[] }>> {
+    const response = await $api.get(`albums/${id}/tracks`, {
+      params: {
+        id: id,
+        limit: limit,
+      },
+    });
+
+    return response;
+  }
+
+  public static async playTrackById(id: string) {
+    const response = await $api.get('me/player/play', {
+      params: {
+        device_id: id,
+      },
+    });
 
     return response;
   }
