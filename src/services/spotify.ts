@@ -1,4 +1,4 @@
-import $api from '@/api/axios';
+import $api from '@/api/spotify';
 import { AxiosPromise } from 'axios';
 import { UserType } from '@/types/user';
 import { CategoriesType } from '@/types/categories';
