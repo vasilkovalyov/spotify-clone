@@ -80,6 +80,10 @@ function PageTrack() {
           {albums && (
             <BlockMediaCards
               title={`Albums by ${artist.name}`}
+              link={{
+                name: 'Show all',
+                path: `${Pages.ARTIST}/${artist.id}/discography/album`,
+              }}
               items={albums.slice(0, 6).map<MediaCardProps>((item) => {
                 return {
                   id: item.id,
