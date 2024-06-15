@@ -28,4 +28,10 @@ export enum IconEnum {
   CHEVRON_LEFT = 'chevron-left',
   CHEVRON_RIGHT = 'chevron-right',
   PLAY = 'play',
+  SHUFFLE = 'shuffle',
+  REPEAT = 'repeat',
+  QUEUE = 'queue',
+  PLAYING_VIEW = 'playing-view',
+  MINIWINDOW = 'miniwindow',
+  EXPAND = 'expand',
 }

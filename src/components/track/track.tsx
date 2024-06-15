@@ -107,7 +107,9 @@ function Track({
         {/* <Button className="track__add">
           <Icon icon={IconEnum.ADD_CIRCLE} />
         </Button> */}
-        <p className="track__duration">{convertTrackTime(duration)}</p>
+        {duration && (
+          <p className="track__duration">{convertTrackTime(duration)}</p>
+        )}
         {/* <Button className="track__more">
           <Icon icon={IconEnum.MORE} />
         </Button> */}

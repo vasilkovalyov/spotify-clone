@@ -28,4 +28,10 @@ export const model = [
   'facebook',
   'chevron-left',
   'chevron-right',
+  'shuffle',
+  'repeat',
+  'queue',
+  'playing-view',
+  'miniwindow',
+  'expand',
 ];

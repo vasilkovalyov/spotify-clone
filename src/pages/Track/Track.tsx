@@ -67,12 +67,12 @@ function PageTrack() {
             image={track.album.images[1]}
             descriptionList={getDescriptionListForBanner(track, artist)}
           />
-          {/* <BlockRecomendation
+          <BlockRecomendation
             trackId={track.id}
             artistId={artist.id}
             title="Recommended"
             subtitle="Based on this song"
-          /> */}
+          />
           <BlockArtistPopularTracks
             artistId={artist.id}
             title={artist.name}

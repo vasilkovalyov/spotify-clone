@@ -1,0 +1,17 @@
+.volume {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 32px 1fr;
+  column-gap: 4px;
+
+  &__toggler {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slider.progress-slider--full {
+    .rs-slider-handle {
+      opacity: 1;
+    }
+  }
+}

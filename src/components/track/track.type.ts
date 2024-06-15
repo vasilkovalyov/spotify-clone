@@ -4,7 +4,7 @@ export type TrackProps = {
   id: string;
   name: string;
   image?: ImageType;
-  duration: number;
+  duration?: number;
   artistId?: string;
   artistName?: string;
   albumId?: string;

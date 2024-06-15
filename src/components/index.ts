@@ -8,3 +8,4 @@ export * from './track';
 export * from './track-list';
 export * from './top-result-artist';
 export * from './album-panel';
+export * from './volume';

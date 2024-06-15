@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import cn from 'classnames';
 
 import { useAppSelector } from '@/redux/hooks';
-import { Header, LeftSidebar } from '../1-containers';
+import { Header, LeftSidebar, PlayerBar } from '../1-containers';
 
 import './layout.scss';
 
@@ -23,7 +23,7 @@ function Layout() {
         </div>
       </main>
       <aside className="right-sidebar"></aside>
-      <section className="player-bar"></section>
+      <PlayerBar />
     </div>
   );
 }

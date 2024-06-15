@@ -1,5 +1,4 @@
-import { LocalStorageService, AuthService } from '@/services';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 const api = axios.create({
   baseURL: `${import.meta.env.VITE_REACT_API_SECONDARY_URL}/`,

@@ -1,0 +1,51 @@
+:root {
+  --slider-handle-visibility: 0;
+  --app-slider-track: rgb(var(--app-color-light) / 0.3);
+  --app-slider-track-progress: rgb(var(--app-color-light));
+  --app-slider-thumb: rgb(var(--app-color-light));
+}
+
+.rs-slider {
+  position: relative;
+  height: 12px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    --slider-handle-visibility: 1;
+  }
+
+  &:focus-within {
+    --slider-handle-visibility: 1;
+    --app-slider-track-progress: var(--app-color-accent);
+  }
+}
+
+.rs-slider-handle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background-color: var(--app-slider-thumb);
+  border-radius: 50%;
+  outline: none;
+  opacity: var(--slider-handle-visibility);
+  cursor: pointer;
+}
+
+.rs-slider-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--app-slider-track);
+}
+
+.rs-slider-progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: inherit;
+  background-color: var(--app-slider-track-progress);
+}
