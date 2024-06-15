@@ -15,6 +15,7 @@ import {
 } from '@/components';
 
 import './search-single.scss';
+import { settings } from '@/constants/settins';
 
 export default function SearchSinglePage() {
   const { value } = useParams();
@@ -92,7 +93,7 @@ export default function SearchSinglePage() {
           <BlockMediaCards
             title="Artists"
             items={data.artists.items
-              .slice(0, 6)
+              .slice(0, settings.blockMediaCardsItemsCount)
               .map<MediaCardProps>((item) => {
                 return {
                   id: item.id,
@@ -107,14 +108,16 @@ export default function SearchSinglePage() {
         {data?.albums && (
           <BlockMediaCards
             title="Albums"
-            items={data.albums.items.slice(0, 6).map<MediaCardProps>((item) => {
-              return {
-                id: item.id,
-                image: item.images[1],
-                name: item.name,
-                type: item.type,
-              };
-            })}
+            items={data.albums.items
+              .slice(0, settings.blockMediaCardsItemsCount)
+              .map<MediaCardProps>((item) => {
+                return {
+                  id: item.id,
+                  image: item.images[1],
+                  name: item.name,
+                  type: item.type,
+                };
+              })}
             statusLoading={statusLoading}
           />
         )}
@@ -122,7 +125,7 @@ export default function SearchSinglePage() {
           <BlockMediaCards
             title="Episodes"
             items={data.episodes.items
-              .slice(0, 6)
+              .slice(0, settings.blockMediaCardsItemsCount)
               .map<MediaCardProps>((item) => {
                 return {
                   id: item.id,
@@ -138,7 +141,7 @@ export default function SearchSinglePage() {
           <BlockMediaCards
             title="Playlists"
             items={data.playlists.items
-              .slice(0, 6)
+              .slice(0, settings.blockMediaCardsItemsCount)
               .map<MediaCardProps>((item) => {
                 return {
                   id: item.id,
@@ -153,14 +156,16 @@ export default function SearchSinglePage() {
         {data?.shows && (
           <BlockMediaCards
             title="Shows"
-            items={data.shows.items.slice(0, 6).map<MediaCardProps>((item) => {
-              return {
-                id: item.id,
-                image: item.images[1],
-                name: item.name,
-                type: item.type,
-              };
-            })}
+            items={data.shows.items
+              .slice(0, settings.blockMediaCardsItemsCount)
+              .map<MediaCardProps>((item) => {
+                return {
+                  id: item.id,
+                  image: item.images[1],
+                  name: item.name,
+                  type: item.type,
+                };
+              })}
             statusLoading={statusLoading}
           />
         )}

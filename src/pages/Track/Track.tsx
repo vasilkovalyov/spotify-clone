@@ -17,6 +17,7 @@ import { AlbumType } from '@/types/album';
 import { MediaCardProps } from '@/components';
 import { StatusLoadingBuilder } from '@/types/common';
 import { Pages } from '@/constants/pages';
+import { settings } from '@/constants/settins';
 
 function PageTrack() {
   const { id } = useParams();
@@ -84,15 +85,17 @@ function PageTrack() {
                 name: 'Show all',
                 path: `${Pages.ARTIST}/${artist.id}/discography/album`,
               }}
-              items={albums.slice(0, 6).map<MediaCardProps>((item) => {
-                return {
-                  id: item.id,
-                  image: item.images[1],
-                  name: item.name,
-                  type: `${item.release_date.split('-')[0]} • ${item.type}`,
-                  href: `${Pages.ALBUM}/${item.id}`,
-                };
-              })}
+              items={albums
+                .slice(0, settings.blockMediaCardsItemsCount)
+                .map<MediaCardProps>((item) => {
+                  return {
+                    id: item.id,
+                    image: item.images[1],
+                    name: item.name,
+                    type: `${item.release_date.split('-')[0]} • ${item.type}`,
+                    href: `${Pages.ALBUM}/${item.id}`,
+                  };
+                })}
               statusLoading={statusLoading}
             />
           )}
