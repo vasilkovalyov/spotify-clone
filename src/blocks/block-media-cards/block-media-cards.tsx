@@ -24,13 +24,14 @@ function BlockMediaCards({
         {statusLoading === 'succeeded' && (
           <div className="media-card-grid">
             {items.length &&
-              items.map(({ id, name, type, image }) => (
+              items.map(({ id, name, type, image, href }) => (
                 <MediaCard
                   key={id}
                   id={id}
                   image={image}
                   name={name}
                   type={type}
+                  href={href}
                 />
               ))}
           </div>

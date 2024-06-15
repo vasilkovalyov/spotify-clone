@@ -81,6 +81,11 @@ export class SpotifyService {
       }
     );
 
+    // const d = await $api.get(
+    //   'artists/6mdiAmATAx73kdxrNrnlao/albums?include_groups=compilation&limit=50'
+    // );
+    // console.log(d);
+
     return response.data.items;
   }
 
@@ -88,12 +93,15 @@ export class SpotifyService {
     value: string,
     options?: {
       type: string[];
+      limit?: number;
+      market?: string;
     }
   ): Promise<AxiosPromise<SearchType>> {
     const params = new URLSearchParams({
       q: `remaster&artist:${value}`,
-      include_external: 'audio',
-      limit: '10',
+      // include_external: 'audio',
+      limit: options?.limit?.toString() || '10',
+      market: options?.market || 'ES',
     });
 
     if (options && options.type) {
