@@ -185,4 +185,22 @@ export class SpotifyService {
 
     return response;
   }
+
+  public static async getAvailableDevices() {
+    const response = await $api.get('me/player/devices');
+
+    return response;
+  }
+
+  public static async updateVolume(deviceId: string, value: number) {
+    const response = await $api.put(
+      'me/player/volume',
+      {},
+      {
+        params: { volume_percent: value, device_id: deviceId },
+      }
+    );
+
+    return response;
+  }
 }

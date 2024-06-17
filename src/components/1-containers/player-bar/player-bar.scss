@@ -55,6 +55,22 @@
 
   .btn--active {
     color: var(--app-color-accent);
+
+    &:hover {
+      color: var(--app-color-accent);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
   }
 }
 

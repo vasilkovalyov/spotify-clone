@@ -3,14 +3,21 @@ import App from './App.tsx';
 
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
-import { fetchSettings } from './redux/slices/settings.ts';
+import {
+  fetchSettings,
+  fetchPlayerSettings,
+  getAvailableDevices,
+} from './redux/slices';
 import { getMe } from './redux/slices/user';
 
 import { AuthService } from './services/auth.ts';
 
 import './styles/main.scss';
 
+authAfterLogin();
 store.dispatch(fetchSettings());
+store.dispatch(fetchPlayerSettings());
+store.dispatch(getAvailableDevices());
 
 async function authAfterLogin() {
   const token = AuthService.getCodeAuthFromUrl();
@@ -28,8 +35,6 @@ async function authAfterLogin() {
     })
   );
 }
-
-authAfterLogin();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>

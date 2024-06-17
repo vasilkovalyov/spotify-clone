@@ -8,7 +8,7 @@ import './volume.scss';
 
 export default function Volume({
   className,
-  value = 100,
+  value,
   onMute,
   onChange,
 }: VolumeProps) {
@@ -18,7 +18,7 @@ export default function Volume({
   useEffect(() => {
     setVolume(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [value]);
 
   const getIconVolume = (value: number) => {
     if (value === 0) return <Icon icon={IconEnum.VOLUME_MUTE} />;
@@ -53,7 +53,7 @@ export default function Volume({
       <ProgressSlider
         className="volume__slider"
         value={volume}
-        onChange={(value) => {
+        onChangeCommitted={(value) => {
           setVolume(value);
           onChange && onChange(value);
         }}

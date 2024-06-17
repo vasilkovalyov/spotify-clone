@@ -20,7 +20,7 @@
       var(--app-right-sidebar-width)
     );
   grid-template-rows: 1fr auto;
-  height: 100vh;
+  height: 100dvh;
 
   &--left-sidebar-show {
     --app-left-sidebar-width: 72px;

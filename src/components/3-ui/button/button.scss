@@ -3,6 +3,7 @@
 .btn {
   @include common.animate(color background-color);
 
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
